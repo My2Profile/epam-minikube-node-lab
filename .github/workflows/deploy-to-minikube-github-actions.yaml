@@ -21,6 +21,11 @@ jobs:
       - name: Check cluster
         run: kubectl get pods -A
 
+      - name: Install and test Node.js app
+        run: |
+          npm install
+          npm test
+
       - name: Build image inside Minikube
         run: |
           export SHELL=/bin/bash
